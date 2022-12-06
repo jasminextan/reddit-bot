@@ -28,9 +28,23 @@ replacements = {
     'STUFF' : ['stuff','garbage','nonsense','bunk','gibberish','drivel'],
     'FACTS' : ['facts','statistics','science','data','truth','reality'],
 }
+
+def generate_comment():
+    madlib = random.choice(madlibs)
+    for replacement in replacements.keys():
+        madlib = madlib.replace('[' + replacement + ']', random.choice(replacements[replacement]))
+    return madlib
+
+
 # FIXME:
 # connect to reddit 
 reddit = praw.Reddit()
+parser = argparse.ArgumentParser()
+parser.add_argument('--botnum', default='')
+args = parser.parse_args()
+bot_name = 'bigjbot' + args.botnum
+reddit = praw.Reddit(bot_name)
+
 
 # FIXME:
 # select a "home" submission in the /r/cs40_2022fall subreddit to post to,
@@ -42,7 +56,7 @@ reddit = praw.Reddit()
 # When you're first writing your code, it probably makes sense to make a submission
 # that only you and 1-2 other students are working with.
 # That way, you can more easily control the number of comments in the submission.
-submission_url = ''
+submission_url = 'https://www.reddit.com/r/cs40_2022fall/comments/zdw9on/jbot_likes_goat_cheese/'
 submission = reddit.submission(url=submission_url)
 
 # each iteration of this loop will post a single comment;
@@ -65,7 +79,13 @@ while True:
 
     # FIXME (task 0): get a list of all of the comments in the submission
     # HINT: this requires using the .list() and the .replace_more() functions
+
     all_comments = []
+    print ('replace more start')
+    submission.comments.replace_more(limit=None) 
+    print ('replace more end')
+    all_comments = submission.comments.list()
+    
     # HINT: 
     # we need to make sure that our code is working correctly,
     # and you should not move on from one task to the next until you are 100% sure that 
@@ -84,6 +104,9 @@ while True:
     # use a for loop to loop over each comment in all_comments,
     # and an if statement to check whether the comment is authored by you or not
     not_my_comments = []
+    for comment in all_comments:
+        if comment.author != bot_name:
+            not_my_comments.append(comment)
 
     # HINT:
     # checking if this code is working is a bit more complicated than in the previous tasks;
@@ -109,7 +132,7 @@ while True:
         # use the generate_comment() function to create the text,
         # and the .reply() function to post it to reddit;
         # a top level comment is created when you reply to a post instead of a message
-        pass
+        submission.reply(generate_comment())
 
     else:
         # FIXME (task 3): filter the not_my_comments list to also remove comments that 
@@ -120,6 +143,16 @@ while True:
         # and the inner for loop loops over all the replies of the current comment from the outer loop,
         # and then an if statement checks whether the comment is authored by you or not
         comments_without_replies = []
+        for comment in not_my_comments:
+            if len(comment.replies.list()) == 0:
+                comments_without_replies.append(comment)
+            else:
+                has_replied = False
+                for reply in comment.replies.list():
+                    if reply.author == bot_name:
+                        has_replied = True
+                if has_replied == False:
+                    comments_without_replies.append(comment)
 
         # HINT:
         # this is the most difficult of the tasks,
@@ -135,12 +168,30 @@ while True:
         # and the .reply() function to post it to reddit;
         # these will not be top-level comments;
         # so they will not be replies to a post but replies to a message
-        pass
+
+        try:
+            rand=random.choice(comments_without_replies)
+            rand.reply(generate_comment())
+            try:
+                highest = 0
+                for c in comments_without_replies:
+                    if c.score >= highest:
+                        highest = c.score
+                        to_reply = c 
+                to_reply.reply(generate_comment())
+                
+            except praw.exceptions.APIException:
+                print('oops lol deleted')
+                pass
+        except IndexError:
+            print('oops lol this is mine')
+            pass
 
     # FIXME (task 5): select a new submission for the next iteration;
     # your newly selected submission should be randomly selected from the 5 hottest submissions
-    pass
-
+    next_it = list(reddit.subreddit("cs40_2022fall").hot(limit=5))
+    submission=random.choice(next_it)
+    
     # We sleep just for 1 second at the end of the while loop.
     # This doesn't avoid rate limiting
     # (since we're not sleeping for a long period of time),
