@@ -194,4 +194,4 @@ while True:
     # This doesn't avoid rate limiting
     # (since we're not sleeping for a long period of time),
     # but it does make the program's output more readable.
-    time.sleep(1)
+    time.sleep(27)
