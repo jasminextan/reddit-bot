@@ -3,7 +3,6 @@ import random
 import datetime
 import time
 import argparse
-import markovify
 
 # FIXME:
 # copy your generate_comment function from the madlibs assignment here
@@ -38,7 +37,6 @@ def generate_comment():
 
 # FIXME:
 # connect to reddit 
-reddit = praw.Reddit()
 parser = argparse.ArgumentParser()
 parser.add_argument('--botnum', default='')
 args = parser.parse_args()
