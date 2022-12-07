@@ -38,7 +38,6 @@ def generate_comment():
 
 # FIXME:
 # connect to reddit 
-reddit = praw.Reddit()
 parser = argparse.ArgumentParser()
 parser.add_argument('--botnum', default='')
 args = parser.parse_args()
