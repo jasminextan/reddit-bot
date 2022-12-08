@@ -3,7 +3,6 @@ import random
 import datetime
 import time
 import argparse
-import markovify
 
 # FIXME:
 # copy your generate_comment function from the madlibs assignment here
@@ -11,10 +10,10 @@ import markovify
 madlibs = [
     "I will never trust the word of [REPUB]. He once told me that he would [DEMACT], but he actually wanted to [REPACT]. I heard he even [HATES] [LOVABLE].",
     "I've heard [REPUB] is kind of wack; he said his deepest desire was to [REPACT]. Even [LOVABLE] [HATE] [REPUB]. I'm [TELLING] you, he's nothing but trouble.",
-    "There is no world where [REPUB] is not saying stupid [STUFF] like wanting to [REPACT]. I wish he would [DEMACT], but I guess I would have to vote for Joe Biden. Now there's a man who would never [REPACT].",
-    "I like politicans who can stand by [FACTS] like Joe Biden. Politicians like [REPUB] are all just spewing stupid [STUFF] like trying to [REPACT]. I bet if I had [LOVABLE], they would vote for Biden.",
-    "It's literally gospel that [LOVABLE] adore Biden. They [HATE] [REPUB] because he tried to [REPACT]. [LOVABLE] are all supporters of the movement to [DEMACT], that's why they vote blue!",
-    "I like Biden because my [LOVABLE] [HATE] [REPUB]. I would feel so guilty if they knew I ever voted to [REPACT], and I rather like the movement to [DEMACT], so I guess I'll vote Joe.",
+    "There is no world where [REPUB] is not doing stupid [STUFF] like wanting to [REPACT]. I wish he would [DEMACT], but I guess I would have to vote for Joe Biden. Now there's a man who would never [REPACT].",
+    "I like politicans who can stand by [FACTS] like Joe Biden. Politicians like [REPUB] are all just spewing stupid [STUFF] like trying to [REPACT]. I bet if I had [LOVABLE], they would vote for Biden."
+    "It's literally gospel that [LOVEABLE] adore Biden. They [HATE] [REPUB] because he tried to [REPACT]. [LOVABLE] are all supporters of the movement to [DEMACT], that's why they vote blue!"
+    "I like Biden because my [LOVABLE] [HATE] [REPUB]. I would feel so guilty if they knew I ever voted to [REPACT], and I rather like the movement to [DEMACT], so I guess I'll vote Joe."
 ]
 
 replacements = {
@@ -195,4 +194,4 @@ while True:
     # This doesn't avoid rate limiting
     # (since we're not sleeping for a long period of time),
     # but it does make the program's output more readable.
-    time.sleep(1)
+    time.sleep(27)
