@@ -3,6 +3,7 @@ import random
 import datetime
 import time
 import argparse
+import markovify
 
 # FIXME:
 # copy your generate_comment function from the madlibs assignment here
@@ -35,10 +36,13 @@ def generate_comment():
     return madlib
 
 
+#INSERT DEFINE MARKOVIFY HERE
+
 # FIXME:
 # connect to reddit 
 parser = argparse.ArgumentParser()
 parser.add_argument('--botnum', default='')
+#parser.add_argument('--markovify', nargs='?', const=True)
 args = parser.parse_args()
 bot_name = 'bigjbot' + args.botnum
 reddit = praw.Reddit(bot_name, ratelimit_seconds=3600)
@@ -67,6 +71,11 @@ submission = reddit.submission(url=submission_url)
 # you probably don't want it to run in an infinite loop;
 # you can change this while loop to an if statement to make the code run only once
 while True:
+
+    #if args.markovify:
+    #    generate_text = generate_markovify()
+    #else:
+    generate_text = generate_comment()
 
     # printing the current time will help make the output messages more informative
     # since things on reddit vary with time
@@ -131,6 +140,7 @@ while True:
         # and the .reply() function to post it to reddit;
         # a top level comment is created when you reply to a post instead of a message
         submission.reply(generate_comment())
+        pass
 
     else:
         # FIXME (task 3): filter the not_my_comments list to also remove comments that 
