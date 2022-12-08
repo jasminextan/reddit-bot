@@ -41,7 +41,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--botnum', default='')
 args = parser.parse_args()
 bot_name = 'bigjbot' + args.botnum
-reddit = praw.Reddit(bot_name)
+reddit = praw.Reddit(bot_name, ratelimit_seconds=3600)
 
 
 # FIXME:
