@@ -40,6 +40,15 @@ valid_comments= 939
 
 Bot #2: bigjbot1
 ```
+len(comments)= 584
+len(top_level_comments)= 5
+len(replies)= 579
+len(valid_top_level_comments)= 5
+len(not_self_replies)= 579
+len(valid_replies)= 563
+========================================
+valid_comments= 568
+========================================
 ```
 
 Bot #3: bigjbot2
@@ -89,6 +98,15 @@ Bot #6: bigjbot5
 
 Bot #7: bigjbot6
 ```
+len(comments)= 146
+len(top_level_comments)= 5
+len(replies)= 141
+len(valid_top_level_comments)= 5
+len(not_self_replies)= 141
+len(valid_replies)= 141
+========================================
+valid_comments= 146
+========================================
 ```
 
 
