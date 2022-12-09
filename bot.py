@@ -38,6 +38,8 @@ def generate_comment():
 
 #INSERT DEFINE MARKOVIFY HERE
 def generate_markovify():
+    print()
+    print ('markovify activated')
     with open('markovify.txt') as f:
         text = f.read()
     texts = text.split('\n\n')
@@ -51,6 +53,7 @@ def generate_markovify():
         word_list = sentence.split()
         if len(word_list) >= 7 and len(word_list) < 30:
             text += sentence
+    print (text)
     return(text)  
 
 
@@ -195,14 +198,14 @@ while True:
 
         try:
             rand=random.choice(comments_without_replies)
-            rand.reply(generate_comment())
+            rand.reply(generate_text)
             try:
                 highest = 0
                 for c in comments_without_replies:
                     if c.score >= highest:
                         highest = c.score
                         to_reply = c 
-                to_reply.reply(generate_comment())
+                to_reply.reply(generate_text)
                 
             except praw.exceptions.APIException:
                 print('oops lol deleted')

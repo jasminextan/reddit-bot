@@ -18,7 +18,7 @@ I like [this](https://old.reddit.com/r/cs40_2022fall/comments/zdw9on/jbot_likes_
 I created 7 bots:
 [bigjbot](https://old.reddit.com/user/bigjbot/), [bigjbot1](https://old.reddit.com/user/bigjbot1/), [bigjbot2](https://old.reddit.com/user/bigjbot2/), [bigjbot3](https://old.reddit.com/user/bigjbot3/), [bigjbot4](https://old.reddit.com/user/bigjbot4/), [bigjbot5](https://old.reddit.com/user/bigjbot5/), [bigjbot6](https://old.reddit.com/user/bigjbot6/).
 
-Bigjbots 0 - 4 are my original bots I created. Bigjbot5 was made so that I could continue refining my bot.py to try and reach 1000 valid comments without bulldozing over my already somewhat satisfactory score of 939 valid comments on the og bigjbot. Bigjbot6 was made to test my markovify function. 
+Bigjbots 0 - 4 are my original bots I created. Bigjbot5 was made so that I could continue refining my bot.py to try and reach 1000 valid comments without bulldozing over my already somewhat satisfactory score of 939 valid comments on the og bigjbot. Bigjbot6 was made to test my markovify function. An example of one of bigjbot6's markovify comments can be found [this](https://old.reddit.com/r/cs40_2022fall/comments/zdw9on/jbot_likes_goat_cheese/izhfxcb/).
 
 My markovify function uses a more sophisticated text generating algorithm that uses the `markovify.txt` file that is attached above.  It contains information on [Biden's accomblishments](https://joebiden.com/accomplishments/#), [Trump's history of racism](https://www.vox.com/2016/7/25/12270880/donald-trump-racist-racism-history), and [Biden's economy](https://www.washingtonpost.com/business/bidens-economy-has-the-best-growth-record-since-clinton/2022/08/31/45734024-2925-11ed-a90a-fce4015dfc8f_story.html).
 
@@ -72,6 +72,15 @@ valid_comments= 533
 
 5. Bot #5: bigjbot4
 ```
+len(comments)= 503
+len(top_level_comments)= 5
+len(replies)= 498
+len(valid_top_level_comments)= 5
+len(not_self_replies)= 498
+len(valid_replies)= 496
+========================================
+valid_comments= 501
+========================================
 ```
 
 6. Bot #6: bigjbot5
