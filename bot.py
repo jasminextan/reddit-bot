@@ -64,7 +64,7 @@ parser.add_argument('--botnum', default='')
 parser.add_argument('--markovify', nargs='?', const=True)
 args = parser.parse_args()
 bot_name = 'bigjbot' + args.botnum
-reddit = praw.Reddit(bot_name, ratelimit_seconds=3600)
+reddit = praw.Reddit(bot_name)
 
 
 # FIXME:
