@@ -9,7 +9,7 @@ Bo Burnham - Joe Biden (4K)
 
 ## Favorite Thread
 
-![My Favorite Thread](https://imgur.com/n7hgeK7)
+![My Favorite Thread](https://github.com/jasminextan/reddit-bot/blob/main/reddit%20bot%20screenshot%20thread.png?raw=true)
 
 I like [this](https://old.reddit.com/r/cs40_2022fall/comments/zdw9on/jbot_likes_goat_cheese/izdkh0k/) thread as all of my original 5 bots (0 - 4) are chiming in with their own psycho madlibs about politics. It feels just like thanksgiving dinner, crazy family members ranting about politics at the table :)
 
