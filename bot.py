@@ -77,7 +77,7 @@ reddit = praw.Reddit(bot_name, ratelimit_seconds=3600)
 # When you're first writing your code, it probably makes sense to make a submission
 # that only you and 1-2 other students are working with.
 # That way, you can more easily control the number of comments in the submission.
-submission_url = 'https://www.reddit.com/r/cs40_2022fall/comments/zdw9on/jbot_likes_goat_cheese/'
+submission_url = 'https://old.reddit.com/r/cs40_2022fall/comments/zh79a5/jbot_likes_all_cheese/?'
 submission = reddit.submission(url=submission_url)
 
 # each iteration of this loop will post a single comment;
@@ -108,7 +108,7 @@ while True:
 
     all_comments = []
     print ('replace more start')
-    submission.comments.replace_more(limit=None) 
+    submission.comments.replace_more(limit=100) 
     print ('replace more end')
     all_comments = submission.comments.list()
     
@@ -198,7 +198,6 @@ while True:
 
         try:
             rand=random.choice(comments_without_replies)
-            rand.reply(generate_text)
             try:
                 highest = 0
                 for c in comments_without_replies:
@@ -206,7 +205,6 @@ while True:
                         highest = c.score
                         to_reply = c 
                 to_reply.reply(generate_text)
-                
             except praw.exceptions.APIException:
                 print('oops lol deleted')
                 pass
