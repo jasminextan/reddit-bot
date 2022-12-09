@@ -37,12 +37,28 @@ def generate_comment():
 
 
 #INSERT DEFINE MARKOVIFY HERE
+def generate_markovify():
+    with open('markovify.txt') as f:
+        text = f.read()
+    texts = text.split('\n\n')
+    model_biden_accomplishments = markovify.Text(texts[0])
+    model_trump_racism = markovify.Text(texts[1])
+    model_biden_economy = markovify.Text(texts[2])
+    model_combination = markovify.combine([model_biden_accomplishments, model_trump_racism, model_biden_economy], [1, 2, 1])
+    text = ''
+    for i in range(5):
+        sentence = model_combination.make_sentence(tries=50, state_size=7) + ' '
+        word_list = sentence.split()
+        if len(word_list) >= 7 and len(word_list) < 30:
+            text += sentence
+    return(text)  
+
 
 # FIXME:
 # connect to reddit 
 parser = argparse.ArgumentParser()
 parser.add_argument('--botnum', default='')
-#parser.add_argument('--markovify', nargs='?', const=True)
+parser.add_argument('--markovify', nargs='?', const=True)
 args = parser.parse_args()
 bot_name = 'bigjbot' + args.botnum
 reddit = praw.Reddit(bot_name, ratelimit_seconds=3600)
@@ -72,10 +88,10 @@ submission = reddit.submission(url=submission_url)
 # you can change this while loop to an if statement to make the code run only once
 while True:
 
-    #if args.markovify:
-    #    generate_text = generate_markovify()
-    #else:
-    generate_text = generate_comment()
+    if args.markovify:
+        generate_text = generate_markovify()
+    else:
+        generate_text = generate_comment()
 
     # printing the current time will help make the output messages more informative
     # since things on reddit vary with time
