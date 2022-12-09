@@ -198,7 +198,7 @@ while True:
 
         try:
             rand=random.choice(comments_without_replies)
-            rand.reply(generate_text)
+        #    rand.reply(generate_text)
             try:
                 highest = 0
                 for c in comments_without_replies:
@@ -223,4 +223,4 @@ while True:
     # This doesn't avoid rate limiting
     # (since we're not sleeping for a long period of time),
     # but it does make the program's output more readable.
-    time.sleep(27)
+    time.sleep(5)

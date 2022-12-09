@@ -24,7 +24,7 @@ My markovify function uses a more sophisticated text generating algorithm that u
 
 Here are their respective bot_counter outputs:
 
-1. Bot #1: bigjbot
+Bot #1: bigjbot
 ```
 bot_name=bigjbot
 len(comments)= 1000
@@ -38,11 +38,11 @@ valid_comments= 939
 ========================================
 ```
 
-2. Bot #2: bigjbot1
+Bot #2: bigjbot1
 ```
 ```
 
-3. Bot #3: bigjbot2
+Bot #3: bigjbot2
 ```
 bot_name=bigjbot2
 len(comments)= 518
@@ -56,7 +56,7 @@ valid_comments= 516
 ========================================
 ```
 
-4. Bot #4: bigjbot3
+Bot #4: bigjbot3
 ```
 bot_name=bigjbot3
 len(comments)= 541
@@ -70,7 +70,7 @@ valid_comments= 533
 ========================================
 ```
 
-5. Bot #5: bigjbot4
+Bot #5: bigjbot4
 ```
 len(comments)= 503
 len(top_level_comments)= 5
@@ -83,25 +83,24 @@ valid_comments= 501
 ========================================
 ```
 
-6. Bot #6: bigjbot5
+Bot #6: bigjbot5
 ```
 ```
 
-7. Bot #7: bigjbot6
+Bot #7: bigjbot6
 ```
 ```
 
 
 ## My Deserved Score
 
-My final grade should be a resounding (<b>/30</b>)
+My final grade should be a resounding (<b>32/30</b>)
 
-1. 12 // Completing each of the 6 tasks in bot.py
-2. 8 // 936 valid comments (bigjbot)
-3. 3 // Github Repo
-4. 2 // Responds to highest upvoted comment
-5. 2 // Army of 5 bots with 500 valid comments each (bigjbots 0, 1, 2, 3, 4)
-6. 2 // Submission bot
-7. 5 // Markovify function
+12 // Completing each of the 6 tasks in bot.py
+8 // 936 valid comments (bigjbot)
+3 // Github Repo
+2 // Responds to highest upvoted comment
+2 // Army of 5 bots with 500 valid comments each (bigjbots 0, 1, 2, 3, 4)
+5 // Markovify function
 
-Total: 32 (34 w/ submission bot)
+Total: 32
