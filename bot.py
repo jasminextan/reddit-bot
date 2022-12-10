@@ -93,8 +93,11 @@ while True:
 
     if args.markovify:
         generate_text = generate_markovify()
+        generate_text1 = generate_markovify()
     else:
         generate_text = generate_comment()
+        generate_text1 = generate_comment()
+
 
     # printing the current time will help make the output messages more informative
     # since things on reddit vary with time
@@ -108,7 +111,7 @@ while True:
 
     all_comments = []
     print ('replace more start')
-    submission.comments.replace_more(limit=100) 
+    submission.comments.replace_more(limit=None) 
     print ('replace more end')
     all_comments = submission.comments.list()
     
@@ -149,6 +152,7 @@ while True:
     # (your bot may have posted comments in other submissions);
     # your bot will behave differently depending on whether it's posted a comment or not
     has_not_commented = len(not_my_comments) == len(all_comments)
+    print('has_not_commented=', has_not_commented)
 
     if has_not_commented:
         # FIXME (task 2)
@@ -158,7 +162,7 @@ while True:
         # use the generate_comment() function to create the text,
         # and the .reply() function to post it to reddit;
         # a top level comment is created when you reply to a post instead of a message
-        submission.reply(generate_comment())
+        submission.reply(generate_text)
         pass
 
     else:
@@ -198,6 +202,9 @@ while True:
 
         try:
             rand=random.choice(comments_without_replies)
+            print ('rando comment picked')
+            rand.reply(generate_text1)
+            print('rando comment commented')
             try:
                 highest = 0
                 for c in comments_without_replies:

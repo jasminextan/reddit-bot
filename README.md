@@ -40,72 +40,79 @@ valid_comments= 939
 
 Bot #2: bigjbot1
 ```
-len(comments)= 584
-len(top_level_comments)= 5
-len(replies)= 579
-len(valid_top_level_comments)= 5
-len(not_self_replies)= 579
-len(valid_replies)= 563
+len(comments)= 663
+len(top_level_comments)= 11
+len(replies)= 652
+len(valid_top_level_comments)= 9
+len(not_self_replies)= 652
+len(valid_replies)= 616
 ========================================
-valid_comments= 568
+valid_comments= 625
 ========================================
 ```
 
 Bot #3: bigjbot2
 ```
-bot_name=bigjbot2
-len(comments)= 518
-len(top_level_comments)= 5
-len(replies)= 513
-len(valid_top_level_comments)= 5
-len(not_self_replies)= 513
-len(valid_replies)= 511
+len(comments)= 593
+len(top_level_comments)= 10
+len(replies)= 583
+len(valid_top_level_comments)= 10
+len(not_self_replies)= 583
+len(valid_replies)= 559
 ========================================
-valid_comments= 516
+valid_comments= 569
 ========================================
 ```
 
 Bot #4: bigjbot3
 ```
-bot_name=bigjbot3
-len(comments)= 541
-len(top_level_comments)= 5
-len(replies)= 536
-len(valid_top_level_comments)= 5
-len(not_self_replies)= 536
-len(valid_replies)= 528
+len(comments)= 626
+len(top_level_comments)= 11
+len(replies)= 615
+len(valid_top_level_comments)= 9
+len(not_self_replies)= 615
+len(valid_replies)= 591
 ========================================
-valid_comments= 533
+valid_comments= 600
 ========================================
 ```
 
 Bot #5: bigjbot4
 ```
-len(comments)= 503
-len(top_level_comments)= 5
-len(replies)= 498
-len(valid_top_level_comments)= 5
-len(not_self_replies)= 498
-len(valid_replies)= 496
+len(comments)= 604
+len(top_level_comments)= 11
+len(replies)= 593
+len(valid_top_level_comments)= 9
+len(not_self_replies)= 592
+len(valid_replies)= 568
 ========================================
-valid_comments= 501
+valid_comments= 577
 ========================================
 ```
 
 Bot #6: bigjbot5
 ```
+len(comments)= 194
+len(top_level_comments)= 10
+len(replies)= 184
+len(valid_top_level_comments)= 10
+len(not_self_replies)= 184
+len(valid_replies)= 170
+========================================
+valid_comments= 180
+========================================
 ```
 
 Bot #7: bigjbot6
 ```
-len(comments)= 146
-len(top_level_comments)= 5
-len(replies)= 141
-len(valid_top_level_comments)= 5
-len(not_self_replies)= 141
-len(valid_replies)= 141
+len(comments)= 163
+len(top_level_comments)= 11
+len(replies)= 152
+len(valid_top_level_comments)= 9
+len(not_self_replies)= 152
+len(valid_replies)= 148
 ========================================
-valid_comments= 146
+valid_comments= 157
 ========================================
 ```
 
@@ -121,4 +128,4 @@ My final grade should be a resounding (<b>32/30</b>)
 2 // Army of 5 bots with 500 valid comments each (bigjbots 0, 1, 2, 3, 4)
 5 // Markovify function
 
-Total: 32
+Total: 32  
