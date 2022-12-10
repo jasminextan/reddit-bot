@@ -121,11 +121,11 @@ valid_comments= 157
 
 My final grade should be a resounding (<b>32/30</b>)
 
-12 // Completing each of the 6 tasks in bot.py
-8 // 936 valid comments (bigjbot)
-3 // Github Repo
-2 // Responds to highest upvoted comment
-2 // Army of 5 bots with 500 valid comments each (bigjbots 0, 1, 2, 3, 4)
-5 // Markovify function
+1. 12 // Completing each of the 6 tasks in bot.py
+2. 8 // 936 valid comments (bigjbot)
+3. 3 // Github Repo
+4. 2 // Responds to highest upvoted comment
+5. 2 // Army of 5 bots with 500 valid comments each (bigjbots 0, 1, 2, 3, 4)
+6. 5 // Markovify function
 
 Total: 32  
